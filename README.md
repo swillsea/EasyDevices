@@ -1,3 +1,3 @@
 # EasyDevices
 
-A description of this package.
+Simplifies device previews.
