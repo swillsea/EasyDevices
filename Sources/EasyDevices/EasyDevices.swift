@@ -15,7 +15,7 @@ import SwiftUI
 /// }
 
 public enum Device: RawRepresentable {
-    typealias RawValue = PreviewDevice
+    public typealias RawValue = PreviewDevice
     
     case mac
     
@@ -53,7 +53,7 @@ public enum Device: RawRepresentable {
     case appleWatch_Series_4_40mm
     case appleWatch_Series_4_44mm
     
-    var rawValue: RawValue {
+    public var rawValue: RawValue {
         switch self {
         case .mac: return PreviewDevice(rawValue: "Mac")
             
@@ -93,7 +93,7 @@ public enum Device: RawRepresentable {
         }
     }
     
-    init?(rawValue: PreviewDevice) {
+    public init?(rawValue: PreviewDevice) {
         let value = rawValue.rawValue
         switch value {
         case "Mac": self = .mac
@@ -138,14 +138,14 @@ public enum Device: RawRepresentable {
 
 /// Convenience
 public extension Array where Element == Device {
-    var previews: [PreviewDevice] {
+    public var previews: [PreviewDevice] {
         return self.map { $0.rawValue }
     }
 }
 
 /// Convenience
 public extension PreviewDevice {
-    static func previews(from devices: [Device]) -> [PreviewDevice] {
+    public static func previews(from devices: [Device]) -> [PreviewDevice] {
         return devices.map { $0.rawValue }
     }
 }
