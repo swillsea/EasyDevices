@@ -151,6 +151,6 @@ public extension PreviewDevice {
 }
 
 /// Required by SwiftUI's ForEach method
-public extension PreviewDevice: Identifiable {
+extension PreviewDevice: Identifiable {
     public var id: String { return self.rawValue }
 }
