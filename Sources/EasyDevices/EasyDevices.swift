@@ -14,7 +14,7 @@ import SwiftUI
 ///     }
 /// }
 
-enum Device: RawRepresentable {
+public enum Device: RawRepresentable {
     typealias RawValue = PreviewDevice
     
     case mac
@@ -137,20 +137,20 @@ enum Device: RawRepresentable {
 }
 
 /// Convenience
-extension Array where Element == Device {
+public extension Array where Element == Device {
     var previews: [PreviewDevice] {
         return self.map { $0.rawValue }
     }
 }
 
 /// Convenience
-extension PreviewDevice {
+public extension PreviewDevice {
     static func previews(from devices: [Device]) -> [PreviewDevice] {
         return devices.map { $0.rawValue }
     }
 }
 
 /// Required by SwiftUI's ForEach method
-extension PreviewDevice: Identifiable {
+public extension PreviewDevice: Identifiable {
     public var id: String { return self.rawValue }
 }
